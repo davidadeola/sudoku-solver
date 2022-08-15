@@ -1,4 +1,6 @@
 import styles from "../styles/sudoku.module.sass";
+import getDeepCopy from "../utils/getDeepCopy";
+import { checkSudoku } from "../utils/sudokuLogic";
 
 function SudokuContainer({
   sudokuScale,
