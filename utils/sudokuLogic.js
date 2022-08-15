@@ -1,3 +1,5 @@
+import getDeepCopy from "./getDeepCopy";
+
 // check SUDOKU!
 const compareSudokus = (currentSudoku, solvedSudoku) => {
   for (let i = 0; i < 9; i++) {
@@ -87,4 +89,27 @@ const getFormattedMatrix = (rawMatrix) => {
   return motherArr;
 };
 
-export { compareSudokus, solve, getFormattedMatrix };
+const checkSudoku = (newSudokuMatrix, prevSudokuMatrix) => {
+  const solvedSudokuMatrix = getDeepCopy(prevSudokuMatrix);
+  solve(solvedSudokuMatrix);
+  compareSudokus(newSudokuMatrix, solvedSudokuMatrix);
+};
+
+const solveSudoku = (initialMatrixArray, setSudokuMatrix) => {
+  const solvedSudokuMatrix = getDeepCopy(initialMatrixArray);
+  solve(solvedSudokuMatrix);
+  setSudokuMatrix(solvedSudokuMatrix);
+  document
+    .querySelectorAll("input.cellInput")
+    .forEach((cell) => (cell.style.backgroundColor = "#363872"));
+};
+
+const resetSudoku = (initialMatrixArray, setSudokuMatrix) => {
+  const initialMatrix = getDeepCopy(initialMatrixArray);
+  setSudokuMatrix(initialMatrix);
+  document
+    .querySelectorAll("input.cellInput")
+    .forEach((cell) => (cell.style.backgroundColor = "#363872aa"));
+};
+
+export { getFormattedMatrix, checkSudoku, solveSudoku, resetSudoku };
