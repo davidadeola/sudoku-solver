@@ -89,6 +89,7 @@ export default function SudokuContainer() {
                       }
                       data-key={`${row}${col}`}
                       onChange={(e) => handleInputChanges(e, row, col)}
+                      onFocus={(e) => e.preventDefault()}
                       className={"cellInput" + " " + styles.cellInput}
                       id={`cellInput${row}${col}`}
                       disabled={initialMatrixArray[row][col] !== 0}
