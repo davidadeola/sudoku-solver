@@ -11,6 +11,7 @@ import {
 const sudokuScale = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
 export default function SudokuContainer() {
+  const [isReadOnly, setIsReadOnly] = useState(true);
   const initialMatrixString =
     "050900000800040307000280190538607940020301000109804623907400000045000209000030070";
   const initialMatrixArray = getFormattedMatrix(initialMatrixString);
@@ -89,7 +90,9 @@ export default function SudokuContainer() {
                       }
                       data-key={`${row}${col}`}
                       onChange={(e) => handleInputChanges(e, row, col)}
-                      onFocus={(e) => e.preventDefault()}
+                      onFocus={(e) => setIsReadOnly(false)}
+                      onBlur={(e) => setIsReadOnly(true)}
+                      readOnly={isReadOnly}
                       className={"cellInput" + " " + styles.cellInput}
                       id={`cellInput${row}${col}`}
                       disabled={initialMatrixArray[row][col] !== 0}
