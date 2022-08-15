@@ -11,7 +11,6 @@ import {
 const sudokuScale = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
 export default function SudokuContainer() {
-  const [isReadOnly, setIsReadOnly] = useState(true);
   const initialMatrixString =
     "050900000800040307000280190538607940020301000109804623907400000045000209000030070";
   const initialMatrixArray = getFormattedMatrix(initialMatrixString);
@@ -111,7 +110,11 @@ export default function SudokuContainer() {
               onMouseDown={(e) => {
                 e.preventDefault();
                 const input = document.activeElement;
-                const [row, col] = input.dataset.key.split("");
+                if (parseInt(input.value)) return;
+                if (!input.dataset.key) return;
+                const [row, col] = input.dataset.key
+                  .split("")
+                  .map((num) => parseInt(num));
                 const newSudokuMatrix = getDeepCopy(sudokuMatrix);
 
                 newSudokuMatrix[row][col] = index + 1;
@@ -130,7 +133,9 @@ export default function SudokuContainer() {
               e.preventDefault();
               const input = document.activeElement;
               if (!input.dataset.key) return;
-              const [row, col] = input.dataset.key.split("");
+              const [row, col] = input.dataset.key
+                .split("")
+                .map((num) => parseInt(num));
               const newSudokuMatrix = getDeepCopy(sudokuMatrix);
 
               newSudokuMatrix[row][col] = 0;

@@ -5,7 +5,7 @@ const compareSudokus = (currentSudoku, solvedSudoku) => {
       const cell = document.getElementById(`cellInput${i}${j}`);
       if (currentSudoku[i][j] !== solvedSudoku[i][j]) {
         if (currentSudoku[i][j] !== 0) {
-          cell.style.backgroundColor = "#663333";
+          cell.style.backgroundColor = "#663333"; // Wrong input
         } else {
           cell.style.backgroundColor = "#363872aa";
         }
