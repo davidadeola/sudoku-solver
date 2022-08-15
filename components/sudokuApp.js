@@ -17,7 +17,6 @@ export default function SudokuContainer() {
   const [sudokuMatrix, setSudokuMatrix] = useState(
     getDeepCopy(initialMatrixArray)
   );
-  const [inputValue, setInputValue] = useState(initialMatrixString);
 
   const checkSudoku = (newSudokuMatrix) => {
     const currentSudokuMatrix = getDeepCopy(sudokuMatrix);
@@ -58,7 +57,7 @@ export default function SudokuContainer() {
       <div className={styles.header + " " + styles.restrictor}>
         <h2>Sudoku Solver</h2>
         <button className={styles.button} onClick={resetSudoku}>
-          <Refresh width="24" height="24" fill="#fff" />
+          <Refresh width="24" height="24" fill="#FF7F00" />
         </button>
       </div>
       <div className={styles.tableBody + " " + styles.restrictor}>
@@ -146,10 +145,10 @@ export default function SudokuContainer() {
       </div>
       <div className={styles.buttonContainerDesktop}>
         <button className={styles.keyboardButton} onClick={solveSudoku}>
-          <SolveIcon width={64} height={64} fill="#fff" />
+          <SolveIcon width={64} height={64} fill="#3B8C57" />
         </button>
         <button className={styles.keyboardButton} onClick={resetSudoku}>
-          <Refresh width={64} height={64} fill="#fff" />
+          <Refresh width={64} height={64} fill="#FF7F00" />
         </button>
       </div>
     </div>

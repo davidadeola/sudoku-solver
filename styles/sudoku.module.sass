@@ -1,3 +1,9 @@
+.container
+  height: 100vh
+  display: flex
+  flex-direction: column
+  align-items: center
+
 .restrictor
   max-width: 95%
   margin-inline: auto
@@ -76,7 +82,7 @@
 
 
 .keyboard
-  width: 100%
+  width: min(100%, 500px)
   display: flex
   gap: .5em
   flex-direction: column
@@ -85,7 +91,7 @@
   padding: .8em .6em
 
 .buttonContainerDesktop
-  width: max(40%, 300px)
+  width: clamp(300px, 40%, 400px)
   display: none
   justify-content: space-between
   margin-inline: auto
@@ -93,6 +99,7 @@
 
 .keyboardButton
   font-size: 2em
+  cursor: pointer
 
 @media screen and ( hover: hover )
   .header
@@ -126,3 +133,7 @@
   button
     flex-basis: 50%
     padding: .65em
+    &:first-child
+      background-color: #f004
+    &:last-child
+      background-color: #0f04
