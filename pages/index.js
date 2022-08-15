@@ -3,7 +3,7 @@ import SudokuApp from "../components/sudokuApp";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>Sudoku Solver</title>
         <meta name="description" content="A sudoku solver" />
@@ -11,6 +11,6 @@ export default function Home() {
       </Head>
 
       <SudokuApp />
-    </div>
+    </>
   );
 }
