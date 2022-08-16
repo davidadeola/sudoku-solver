@@ -8,6 +8,7 @@ function Keyboard({
   sudokuMatrix,
   setSudokuMatrix,
   initialMatrixArray,
+  setFormIsVisible,
 }) {
   return (
     <div className={styles.keyboard}>
@@ -55,7 +56,10 @@ function Keyboard({
           <Delete width={28} height={28} fill="#fff" />
         </button>
         <button
-          onClick={() => solveSudoku(initialMatrixArray, setSudokuMatrix)}
+          onClick={() => {
+            solveSudoku(initialMatrixArray, setSudokuMatrix);
+            setFormIsVisible(false);
+          }}
         >
           <SolveIcon width={28} height={28} fill="#fff" />
         </button>

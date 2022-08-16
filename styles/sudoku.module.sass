@@ -9,9 +9,10 @@
   margin-inline: auto
   
 .header
-  width: 100%
+  width: min(23em, 93%)
   display: flex
-  justify-content: center
+  gap: .5em
+  justify-content: space-between
   position: relative
   padding: 1.4em .3em
   h2
@@ -19,6 +20,25 @@
     color: #fff9
   button
     display: flex
+    &:first-of-type
+      margin-left: auto
+
+.form
+  display: flex
+  gap: .4em
+  button
+    background-color: #0f04
+    padding-inline: .6em
+
+.sudokuInput
+  width: min(20em, 93%)
+  background-color: #41438b77
+  font-size: 1.2em
+  font-family: inherit
+  font-weight: 700
+  border: none
+  border-radius: .5em
+  padding: .5em .7em
 
 .button
   width: 2em
@@ -28,10 +48,10 @@
   display: flex
   justify-content: center
   align-items: center
-  position: absolute
-  top: 50%
-  right: 1em
-  transform: translateY(-50%)
+  // position: absolute
+  // top: 50%
+  // right: 1em
+  // transform: translateY(-50%)
   border: none
   border-radius: .3em
   padding: .4em
@@ -100,9 +120,25 @@
   margin-inline: auto
   margin-block-start: 3em
 
+.buttonContainer
+  width: 100%
+  display: flex
+  gap: .5em
+  button
+    flex-basis: 50%
+    padding: .5em
+    &:first-child
+      background-color: #f004
+    &:last-child
+      background-color: #0f04
+
 .keyboardButton
   font-size: 2em
   cursor: pointer
+
+.insertButton
+  width: 100%
+  flex-basis: auto !important
 
 @media screen and ( min-width: 900px )
   .cell
@@ -133,14 +169,3 @@
   button
     font-size: 1.5em
     padding: .34em
-
-.buttonContainer
-  display: flex
-  gap: .5em
-  button
-    flex-basis: 50%
-    padding: .5em
-    &:first-child
-      background-color: #f004
-    &:last-child
-      background-color: #0f04

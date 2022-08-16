@@ -50,7 +50,7 @@ function SudokuContainer({
                     inputMode="none"
                     className={"cellInput" + " " + styles.cellInput}
                     id={`cellInput${row}${col}`}
-                    disabled={initialMatrixArray[row][col] !== 0}
+                    disabled={initialMatrixArray[row][col] !== 0 || ""}
                   />
                 </div>
               );
