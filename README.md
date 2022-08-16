@@ -30,10 +30,10 @@ I intend on doing more research on how to improve the code base.
 
 - How to install and run the project:
 - How to use the Project:
-- How to Build the Project:
+- Roadmap
 - License
 
-## How to install and run the project:
+## How to build and run the project:
 
 First, run the development server:
 
@@ -51,9 +51,20 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Development Roadmap
+
+```
+SudokuApp: # Takes in other components
+Header: # Title, and Input field.
+SudokuContainer: # all input fields for the sudoku matrix
+Keyboard: # Keyboard for mobile display
+SudokuInput: # Input field for sudoku array
+DesktopButtons: # Sudoku puzzle solver and refresh buttons
+```
+
 ## How to use the Project
 
-The Opened app should look like this:
+The Opened web app should look like this:
 ![first load](./assets/documentation/onload%20image.jpg)
 
 To solve all empty fields for the sudoku value you will click on th puzzle Icon
@@ -65,19 +76,23 @@ This is a sample solved sudoku puzzle:
 You can as well refresh the Input to remove the solved sudoku values. by clicking on the refresh icon
 ![refresh](./assets/documentation/refresh%20sudoku%20matrix.jpg)
 
-With this app you have the luxery to input your own sudoku values, to be solved. Note make sure it is a correct sudoku puzzle data.
+With this app you have the luxury to input your own sudoku values, to be solved. Note make sure it is a correct sudoku puzzle data.
+Plus refreshing the Browser will render fresh Sudoku input values.
 ![input field](./assets/documentation//input%20unsolved%20values.jpg)
 
 Then you can go ahead to input your own values.<br>
 _Note_: the value "0" depicts empty field, that is how the algorithm detects an empty field.
+example: "401090602300100954695000087100053020850071003000208010209807040000360000734000060"
 Then, click the enter Icon to push the values to the matrix.
 
 ![Render new input](./assets/documentation/RENDER%20NEW%20INPUT%20VALUES.jpg)
-
-## How to Build the Project
 
 ---
 
 ## Deployed on Vercel
 
 Check out the app [Sudokanary-App](https://sudokanary.vercel.app/) for more details.
+
+## License
+
+Built under the Scorado application principle.

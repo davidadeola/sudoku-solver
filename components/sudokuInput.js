@@ -8,6 +8,7 @@ export default function SudokuInput({
   setInitialMatrixString,
   initialMatrixString,
 }) {
+  // Handling the initial sudoku array input
   const [inputValue, setInputValue] = useState(initialMatrixString);
   const handleMatrixUpdate = (elemValue) => {
     if (elemValue.length === 81) {
