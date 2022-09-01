@@ -95,4 +95,4 @@ Check out the app [Sudokanary-App](https://sudokanary.vercel.app/) for more deta
 
 ## License
 
-Built under the Scorado application principle.
+Copyright 2022
